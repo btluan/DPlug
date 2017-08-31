@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnBoardingScreenViewController" customModule="Dplug" customModuleProvider="target">
+            <connections>
+                <outlet property="titleApp" destination="Qhh-ge-Kex" id="RHd-Jc-lIo"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oH9-Yc-tyZ">
+                    <rect key="frame" x="62" y="577" width="250" height="40"/>
+                    <color key="backgroundColor" red="1" green="0.396078431372549" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="SYu-SJ-O5K"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="Continue">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="clickBtnContinue:" destination="-1" eventType="touchUpInside" id="U2N-iO-WrX"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhh-ge-Kex">
+                    <rect key="frame" x="62.5" y="460" width="250" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Artboard" translatesAutoresizingMaskIntoConstraints="NO" id="sYF-7k-1uh">
+                    <rect key="frame" x="131.5" y="158.5" width="112.5" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="A2z-nn-xE9"/>
+                        <constraint firstAttribute="width" secondItem="sYF-7k-1uh" secondAttribute="height" multiplier="3:4" id="gru-1n-yDe"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="oH9-Yc-tyZ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="2:3" id="Cid-WP-xpY"/>
+                <constraint firstItem="oH9-Yc-tyZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YA3-S8-YzL"/>
+                <constraint firstItem="Qhh-ge-Kex" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="anH-h4-q10"/>
+                <constraint firstItem="Qhh-ge-Kex" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="2:3" id="ecS-WL-N5Q"/>
+                <constraint firstAttribute="bottom" secondItem="oH9-Yc-tyZ" secondAttribute="bottom" constant="50" id="hSx-Uz-40c"/>
+                <constraint firstItem="sYF-7k-1uh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oE1-Ic-tDN"/>
+                <constraint firstItem="oH9-Yc-tyZ" firstAttribute="top" secondItem="Qhh-ge-Kex" secondAttribute="bottom" constant="100" id="sb5-vU-VzY"/>
+                <constraint firstItem="sYF-7k-1uh" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-100" id="ykl-GU-XAB"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="Artboard" width="186" height="234"/>
+    </resources>
+</document>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Dplug" customModuleProvider="target">
+            <connections>
+                <outlet property="bannerView" destination="DgU-D4-lec" id="By8-1n-RHD"/>
+                <outlet property="menuCollectionView" destination="Hmu-Ci-P4R" id="ZUw-d3-SoF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DgU-D4-lec" customClass="BannerView" customModule="Dplug" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="64" width="375" height="150"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="l6H-z0-eCZ"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Hmu-Ci-P4R">
+                    <rect key="frame" x="0.0" y="214" width="375" height="403"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Cgg-Pc-pww">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Hmu-Ci-P4R" secondAttribute="trailing" id="0BY-Vh-Sbm"/>
+                <constraint firstItem="Hmu-Ci-P4R" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Apu-Dj-KNw"/>
+                <constraint firstItem="DgU-D4-lec" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CHJ-EN-ZTr"/>
+                <constraint firstItem="Hmu-Ci-P4R" firstAttribute="top" secondItem="DgU-D4-lec" secondAttribute="bottom" id="Jkf-T4-C0p"/>
+                <constraint firstItem="DgU-D4-lec" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="TTG-5c-jbZ"/>
+                <constraint firstAttribute="bottom" secondItem="Hmu-Ci-P4R" secondAttribute="bottom" constant="50" id="gcD-9r-piV"/>
+                <constraint firstAttribute="trailing" secondItem="DgU-D4-lec" secondAttribute="trailing" id="jiZ-5i-aKn"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
