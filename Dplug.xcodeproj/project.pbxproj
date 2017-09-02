@@ -19,6 +19,8 @@
 		E45020321F41DCD200A092AA /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45020311F41DCD200A092AA /* Utility.swift */; };
 		E45020341F41DCEE00A092AA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45020331F41DCEE00A092AA /* Constant.swift */; };
 		E45020381F41DFBE00A092AA /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45020371F41DFBE00A092AA /* APIService.swift */; };
+		E45071741F59A6FF00B3EDBA /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45071731F59A6FF00B3EDBA /* CategoriesModel.swift */; };
+		E464202E1F599CC200682AC4 /* ShareInstanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E464202D1F599CC200682AC4 /* ShareInstanceModel.swift */; };
 		E472CBD31F4726CD0063AAF1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E472CBD11F4726CD0063AAF1 /* RegisterViewController.swift */; };
 		E472CBD41F4726CD0063AAF1 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E472CBD21F4726CD0063AAF1 /* RegisterViewController.xib */; };
 		E480C5221F56EE9C00D999E1 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480C5211F56EE9C00D999E1 /* UIImage+Extension.swift */; };
@@ -64,6 +66,8 @@
 		E45020311F41DCD200A092AA /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		E45020331F41DCEE00A092AA /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E45020371F41DFBE00A092AA /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		E45071731F59A6FF00B3EDBA /* CategoriesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
+		E464202D1F599CC200682AC4 /* ShareInstanceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareInstanceModel.swift; sourceTree = "<group>"; };
 		E472CBD11F4726CD0063AAF1 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E472CBD21F4726CD0063AAF1 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		E480C5211F56EE9C00D999E1 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				E433FEE01F585D8100FAA68F /* UserModel.swift */,
+				E464202D1F599CC200682AC4 /* ShareInstanceModel.swift */,
+				E45071731F59A6FF00B3EDBA /* CategoriesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45071741F59A6FF00B3EDBA /* CategoriesModel.swift in Sources */,
 				E4E3714E1F436AD400D48965 /* LoginViewController.swift in Sources */,
 				E498A2871F52CB1B00B95D9E /* String+Extension.swift in Sources */,
 				E45020321F41DCD200A092AA /* Utility.swift in Sources */,
@@ -413,6 +420,7 @@
 				E45020381F41DFBE00A092AA /* APIService.swift in Sources */,
 				E45020341F41DCEE00A092AA /* Constant.swift in Sources */,
 				E4DA02A31F49713F0044C508 /* UserProfileViewController.swift in Sources */,
+				E464202E1F599CC200682AC4 /* ShareInstanceModel.swift in Sources */,
 				E4EF2D911F49B9BB00DDAB62 /* BannerView.swift in Sources */,
 				E498A2821F52A8A800B95D9E /* ErrorMessage.swift in Sources */,
 				E4DA02941F496AF30044C508 /* BaseTabBarViewController.swift in Sources */,

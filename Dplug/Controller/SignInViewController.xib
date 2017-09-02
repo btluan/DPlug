@@ -30,7 +30,7 @@
                         <constraint firstAttribute="width" constant="150" id="LOT-cA-qgn"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hes-7m-Msh" customClass="TextField" customModule="Dplug" customModuleProvider="target">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="lanthanh" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hes-7m-Msh" customClass="TextField" customModule="Dplug" customModuleProvider="target">
                     <rect key="frame" x="62.5" y="262" width="250" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Q2L-AE-kP7"/>
@@ -39,7 +39,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I5S-7s-gGc" customClass="TextField" customModule="Dplug" customModuleProvider="target">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I5S-7s-gGc" customClass="TextField" customModule="Dplug" customModuleProvider="target">
                     <rect key="frame" x="62.5" y="310" width="250" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="3kp-XA-RRC"/>

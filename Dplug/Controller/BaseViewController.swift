@@ -13,6 +13,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardOnTap(#selector(self.dismissKeyboard))
+        self.view.backgroundColor = Constant.mainViewControllerColor
     }
 
     override func didReceiveMemoryWarning() {

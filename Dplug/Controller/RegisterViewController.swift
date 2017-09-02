@@ -22,7 +22,8 @@ class RegisterViewController: BaseViewController {
     @IBOutlet weak var heightScrollView: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    
+    var urlAvata: String?
+    var isPressSubmit = false
     let imagePicker = UIImagePickerController()
     var fKeyboardShow: Bool = false
     
@@ -48,27 +49,17 @@ class RegisterViewController: BaseViewController {
     }
     
     @IBAction func eventSubmit(_ sender: Any) {
-        guard let username = usernameText.text else { return }
-        guard let password = passwordText.text else { return }
-        //let confirmpass = confirmpassText.text
-        guard let email = emailText.text else { return }
-        let provider = "local"
-        
-        if !username.isUsername() || !password.isPassword() || !email.isEmail() {
-            print("username or password invalid")
-            return
-        }
-        
-        
-        APIService.shareInstance.signUpEmail(username: username, password: password, email: email, provider: provider, completion: { result in
-            print("eventSubmit - success: \(String(describing: result))")
-            
-        }) { message in
-            print("eventSubmit - error message: \(message)")
+        if avatarImage.image != nil {
+            if let url = urlAvata {
+                signUp(avata: url)
+            } else {
+                isPressSubmit = true
+            }
+        } else {
+            signUp(avata: nil)
         }
     }
   
-
     @IBAction func eventChooseAvatar(_ sender: Any) {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
@@ -78,19 +69,24 @@ class RegisterViewController: BaseViewController {
 }
 
 extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//            avatarImage.contentMode = .scaleAspectFit
             let imageNew = pickedImage.resizeImageWith(newSize: CGSize(width: 50, height: 50))
             avatarImage.image = imageNew
-            //guard let data = UIImagePNGRepresentation(imageNew) else { return }
             let paths = saveImage(image: imageNew)
-            print("paths: \(paths)")
-            APIService.shareInstance.uploadImage(paths: paths)
+            self.urlAvata = nil
             
-            
-            
-            }
+            APIService.shareInstance.uploadImage(paths: paths, completion: { result in
+                if let data = result as? NSDictionary{
+                    self.urlAvata = data["url"] as? String
+                    if self.isPressSubmit {
+                        self.signUp(avata: self.urlAvata)
+                    }
+                }
+            })
+        }
         dismiss(animated: true, completion: nil)
     }
     
@@ -141,5 +137,30 @@ extension RegisterViewController {
         let imageData = UIImageJPEGRepresentation(image, 1)
         fileManager.createFile(atPath: paths as String, contents: imageData, attributes: nil)
         return URL(fileURLWithPath: paths)
+    }
+    
+    func signUp(avata: String?){
+        guard let username = usernameText.text else { return }
+        guard let password = passwordText.text else { return }
+        let confirmpass = confirmpassText.text
+        guard let email = emailText.text else { return }
+        let provider = "local"
+        
+        if !username.isUsername()
+            || !password.isPassword()
+            || !email.isEmail()
+            || !password.isEqual(confirmpass) {
+            print("username or password invalid")
+            return
+        }
+        
+        
+        APIService.shareInstance.signUpEmail(username: username, password: password, email: email, provider: provider, avata: avata,completion: { result in
+            print("eventSubmit - success: \(String(describing: result))")
+            
+        }) { message in
+            self.isPressSubmit = false
+            print("eventSubmit - error message: \(message)")
+        }
     }
 }

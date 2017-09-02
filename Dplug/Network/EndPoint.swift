@@ -10,4 +10,5 @@ enum EndPoint: String {
     case signup = "/v1/users"
     case signin = "/v1/auth/login"
     case uploadImage = "/v1/upload/image"
+    case level1Categories = "/v1/categories"
 }

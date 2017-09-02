@@ -29,6 +29,8 @@ class Constant: NSObject {
     static let mainColor = UIColor(red: 255/255, green: 101/255, blue: 1/255, alpha: 1)
     //Main Text Color
     static let mainTextColor = UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1)
+    //Background ViewController
+    static let mainViewControllerColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
     
     
     /*****************

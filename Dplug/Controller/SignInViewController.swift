@@ -17,8 +17,6 @@ class SignInViewController: BaseViewController {
     @IBOutlet weak var usernameTextField: TextField!
     @IBOutlet weak var passwordTextField: TextField!
     
-    var userModel = UserModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +27,7 @@ class SignInViewController: BaseViewController {
     }
     
     @IBAction func eventLogin(_ sender: Any) {
+        
         guard let username = usernameTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         
@@ -38,12 +37,8 @@ class SignInViewController: BaseViewController {
         }
         
         APIService.shareInstance.signInEmail(username: username, password: password, completion: { result in
-            print("eventLogin - success: \(String(describing: result))")
             if let data = result as? NSDictionary {
-                self.userModel.parseUser(data: data)
-                print("-------\(String(describing: self.userModel.id))")
-                print("-------\(String(describing: self.userModel.token))")
-                print("-------\(String(describing: self.userModel.username))")
+                ShareInstanceModel.shareInstance.currentUser?.parseUser(data: data)
             }
             self.loginSuccess()
         }) { message in
@@ -52,21 +47,24 @@ class SignInViewController: BaseViewController {
     }
 
     @IBAction func eventLoginFacebook(_ sender: Any) {
+        
         let loginManager = LoginManager()
         loginManager.logIn([ .publicProfile ], viewController: self) { loginResult in
+            
             switch loginResult {
             case .failed(let error):
                 print(error)
+                
             case .cancelled:
                 print("User cancelled login.")
+                
             case .success(let grantedPermissions, let declinedPermissions ,let token):
-                print("--------------------------------")
-                print("\(grantedPermissions) -- \(declinedPermissions) -- \(token)")
-                print("success")
+                print("success: \(grantedPermissions) -- \(declinedPermissions) -- \(token)")
                 self.loginSuccess()
             }
         }
     }
+    
     @IBAction func eventBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
